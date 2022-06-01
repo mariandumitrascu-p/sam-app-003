@@ -1,7 +1,4 @@
-
-
 # sam demo
-
 
 sam pipeline init --bootstrap
 
@@ -13,14 +10,10 @@ sam deploy
 
 sam local invoke HelloWorldFunction --event events/event.json
 
-
 sam local start-api
 curl http://localhost:3000/
 
-
 sam logs -n HelloWorldFunction --stack-name sam-app --tail
-
-
 
 # ##############################################################################
 pip install -r tests/requirements.txt --user
@@ -28,7 +21,7 @@ pip install -r tests/requirements.txt --user
 python -m pytest tests/unit -v
 # integration test, requiring deploying the stack first.
 # Create the env variable AWS_SAM_STACK_NAME with the name of the stack we are testing
- AWS_SAM_STACK_NAME=<stack-name> python -m pytest tests/integration -v
+AWS_SAM_STACK_NAME=<stack-name> python -m pytest tests/integration -v
 
 aws lambda invoke --function-name testFunction --cli-binary-format raw-in-base64-out --payload '{"name": "John Smith"}' response.json
 
@@ -41,4 +34,4 @@ aws lambda invoke \
 
 
 
-aws cloudformation delete-stack --stack-name sam-app-003
+aws cloudformation delete-stack --stack-name sam-app
