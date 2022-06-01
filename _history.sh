@@ -40,6 +40,7 @@ aws cloudformation delete-stack --stack-name sam-app
 mariandumitrascu-p/sam-app-003
 
 # https://aws.amazon.com/blogs/compute/introducing-aws-sam-pipelines-automatically-generate-deployment-pipelines-for-serverless-applications/
+# https://aws.amazon.com/blogs/compute/introducing-aws-sam-pipelines-automatically-generate-deployment-pipelines-for-serverless-applications/
 
 sam deploy -t codepipeline.yaml --stack-name sam-app --capabilities=CAPABILITY_IAM --region us-east-1
 
