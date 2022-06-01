@@ -35,7 +35,7 @@ Parameters:
     Default: "mariandumitrascu-p/sam-app-003"
   MainGitBranch:
     Type: String
-    Default: "master"
+    Default: "main"
   SamTemplate:
     Type: String
     Default: "template.yaml"

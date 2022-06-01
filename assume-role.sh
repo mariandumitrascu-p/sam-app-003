@@ -9,9 +9,9 @@ unset AWS_ACCESS_KEY_ID
 unset AWS_SECRET_ACCESS_KEY
 
 cred=$(aws sts assume-role --role-arn "$ROLE" \
-                           --role-session-name "$SESSION_NAME" \
-                           --query '[Credentials.AccessKeyId,Credentials.SecretAccessKey,Credentials.SessionToken]' \
-                           --output text)
+        --role-session-name "$SESSION_NAME" \
+        --query '[Credentials.AccessKeyId,Credentials.SecretAccessKey,Credentials.SessionToken]' \
+        --output text)
 
 ACCESS_KEY_ID=$(echo "$cred" | awk '{ print $1 }')
 export AWS_ACCESS_KEY_ID=$ACCESS_KEY_ID
