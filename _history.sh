@@ -18,6 +18,8 @@ sam logs -n HelloWorldFunction --stack-name sam-app --tail
 
 # ##############################################################################
 pip install -r tests/requirements.txt --user
+
+
 # unit test
 python -m pytest tests/unit -v
 # integration test, requiring deploying the stack first.
@@ -33,6 +35,7 @@ aws lambda invoke \
     response.json
 
 aws cloudformation delete-stack --stack-name sam-app
+aws cloudformation delete-stack --stack-name  sam-app-004
 
 mariandumitrascu-p/sam-app-003
 
@@ -43,5 +46,9 @@ sam deploy -t codepipeline.yaml --stack-name sam-app-pipeline-001 --capabilities
 
 
 # chage 01
-
+# aws-sam-cli-managed-md-labs-stage-artifactsbucket-17oo8ejjakgeq
+# An error occurred (AccessDenied) when calling the AssumeRole operation:
+# User: arn:aws:sts::327004596447:assumed-role/sam-app-pipeline-001-CodeBuildServiceRole-1K649ZXYJ786T/AWSCodeBuild-6dd8d6b0-0778-4425-8d70-5e2ded5323c7
+# is not authorized to perform: sts:AssumeRole on resource:
+# arn:aws:iam::327004596447:role/aws-sam-cli-managed-md-labs-PipelineExecutionRole-1MU71JRJ6KTPJ
 
